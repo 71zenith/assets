@@ -24,8 +24,8 @@
       overlays = rec {
         default = my-assets;
         my-assets = final: prev: {
-          my-walls = self.packages."${final.system}".my-walls;
-          my-fonts = self.packages."${final.system}".my-fonts;
+          inherit (self.packages."${final.system}") my-walls;
+          inherit (self.packages."${final.system}") my-fonts;
         };
       };
     };

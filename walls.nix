@@ -14,6 +14,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     description = "Collection of wallpapers";
     homepage = "https://github.com/71zenith/assets";
     platforms = platforms.unix;
-    maintainers = with maintainers; [zen];
+    maintainers = with maintainers; [_71zenith];
   };
 })
