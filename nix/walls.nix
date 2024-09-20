@@ -3,17 +3,15 @@
   stdenvNoCC,
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
-  pname = "my-misc";
+  pname = "my-walls";
   version = "latest";
-  src = ./.;
+  src = ../.;
   installPhase = ''
-    mkdir -p $out/share/passive
-    mkdir -p $out/share/misc
-    install -Dm444 passive/* $out/share/passive
-    install -Dm444 misc/* $out/share/misc
+    mkdir -p $out/share/wallpapers
+    install -Dm444 active/* $out/share/wallpapers
   '';
   meta = with lib; {
-    description = "Collection of miscellaneous";
+    description = "Collection of wallpapers";
     homepage = "https://github.com/71zenith/assets";
     platforms = platforms.unix;
     maintainers = with maintainers; [_71zenith];

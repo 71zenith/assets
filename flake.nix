@@ -13,9 +13,9 @@
   }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = import nixpkgs {inherit system;};
-      my-walls = pkgs.callPackage ./walls.nix {};
-      my-fonts = pkgs.callPackage ./fonts.nix {};
-      my-misc = pkgs.callPackage ./misc.nix {};
+      my-walls = pkgs.callPackage ./nix/walls.nix {};
+      my-fonts = pkgs.callPackage ./nix/fonts.nix {};
+      my-misc = pkgs.callPackage ./nix/misc.nix {};
     in {
       packages = {
         inherit my-walls my-fonts my-misc;

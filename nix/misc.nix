@@ -3,15 +3,17 @@
   stdenvNoCC,
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
-  pname = "my-fonts";
+  pname = "my-misc";
   version = "latest";
-  src = ./.;
+  src = ../.;
   installPhase = ''
-    mkdir -p $out/share/fonts
-    install -Dm444 fonts/* $out/share/fonts/
+    mkdir -p $out/share/passive
+    mkdir -p $out/share/misc
+    install -Dm444 passive/* $out/share/passive
+    install -Dm444 misc/* $out/share/misc
   '';
   meta = with lib; {
-    description = "Collection of fonts";
+    description = "Collection of miscellaneous";
     homepage = "https://github.com/71zenith/assets";
     platforms = platforms.unix;
     maintainers = with maintainers; [_71zenith];

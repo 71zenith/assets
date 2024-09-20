@@ -3,15 +3,15 @@
   stdenvNoCC,
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
-  pname = "my-walls";
+  pname = "my-fonts";
   version = "latest";
-  src = ./.;
+  src = ../.;
   installPhase = ''
-    mkdir -p $out/share/wallpapers
-    install -Dm444 active/* $out/share/wallpapers
+    mkdir -p $out/share/fonts
+    install -Dm444 fonts/* $out/share/fonts/
   '';
   meta = with lib; {
-    description = "Collection of wallpapers";
+    description = "Collection of fonts";
     homepage = "https://github.com/71zenith/assets";
     platforms = platforms.unix;
     maintainers = with maintainers; [_71zenith];
